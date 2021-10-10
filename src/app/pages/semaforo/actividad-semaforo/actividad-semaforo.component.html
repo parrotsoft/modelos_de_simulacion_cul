@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col">
+    <h4 class="text-center">Actividad</h4>
+    <p>El color de la luz del semáforo cuando un carro llega al azar a una
+      hora determinada, si el <span style="color: green">40%</span> del tiempo está en verde, <span style="color: #ffff00">10%</span> en amarillo
+      y <span style="color:red;">50%</span> en rojo. El cambio se da por minuto. Simular 100 carros que
+      pasan entre las 18:00 – 19:00 pm. Tener en cuenta que la hora de
+      llegada de los vehículos es al azar.</p>
+    <p>Entregar resultados acerca de:</p>
+    <ul>
+      <li>Cuantos vehículos encontraran la luz verde. <span class="badge rounded-pill bg-success">{{ total_carros_verde }}</span></li>
+      <li>Cuantos la luz amarilla. <span class="badge rounded-pill bg-warning text-dark">{{ total_carros_amarilla }}</span></li>
+      <li>Cuantos la luz roja. <span class="badge rounded-pill bg-danger">{{ total_carros_roja }}</span></li>
+      <li>Cuanto tiempo pierden esperando los carros que llegan en luz roja <span class="badge rounded-pill bg-dark">{{ total_carros_perdido }} Segundos / {{ minutos }} Minutos</span> </li>
+    </ul>
+  </div>
+</div>

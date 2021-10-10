@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { PersonaComponent } from './cara-sello/persona/persona.component';
 import { ActividadCaraSelloComponent } from './cara-sello/actividad-cara-sello/actividad-cara-sello.component';
+import { ActividadSemaforoComponent } from './semaforo/actividad-semaforo/actividad-semaforo.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ActividadCaraSelloComponent } from './cara-sello/actividad-cara-sello/a
     SemaforoComponent,
     HomeComponent,
     PersonaComponent,
-    ActividadCaraSelloComponent
+    ActividadCaraSelloComponent,
+    ActividadSemaforoComponent
   ],
     imports: [
         CommonModule,

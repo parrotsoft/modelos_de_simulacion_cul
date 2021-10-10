@@ -1,1 +1,54 @@
-<p>semaforo works!</p>
+<div class="row">
+  <div class="col-12 col-md-4 card shadow p-3 mb-5 bg-body rounded mt-5">
+    <form class="row g-3" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="col-md-6">
+        <label for="hora_inicial" class="form-label">Hora Inicial</label>
+        <input type="time" class="form-control" id="hora_inicial" formControlName="hora_inicial">
+      </div>
+      <div class="col-md-6">
+        <label for="hora_final" class="form-label">Hora Final</label>
+        <input type="time" class="form-control" id="hora_final" formControlName="hora_final">
+      </div>
+      <div class="col-md-6">
+        <label for="total_carros" class="form-label">Num. Carros</label>
+        <input type="number" class="form-control" id="total_carros" formControlName="total_carros">
+      </div>
+
+      <div class="d-grid gap-2 mb-2">
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Generar</button>
+      </div>
+
+    </form>
+  </div>
+  <div class="col-12 col-md-8">
+    <app-actividad-semaforo
+      [total_carros_verde]="total_carros_verde"
+      [total_carros_amarilla]="total_carros_amarilla"
+      [total_carros_roja]="total_carros_roja"
+      [total_carros_perdido]="total_carros_perdido"
+    ></app-actividad-semaforo>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-12 m-2">
+    <table class="table table-striped table-dark">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Carro</th>
+        <th scope="col">Hora de Llegada</th>
+        <th scope="col">Semaforo</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let row of resultados">
+        <th scope="row">{{ row.carro }}</th>
+        <td>Carro {{ (row.carro+1) }}</td>
+        <td>{{ row.hora_llegada }}</td>
+        <td><span class="badge rounded-pill" style="background-color: {{ row.color }}">Semaforo</span></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
