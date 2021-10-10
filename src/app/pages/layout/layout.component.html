@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Modelos de Simulacion</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLink]="'home'">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'cara-sello'">Cara o Sello</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'semaforo'">Semaforo</a>
+        </li>
+      </ul>
+  </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col mt-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

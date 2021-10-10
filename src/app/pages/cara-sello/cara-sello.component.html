@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-12 col-md-4 card shadow p-3 mb-5 bg-body rounded mt-5">
+    <form class="row g-3" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="col-md-6">
+        <label for="num_personas" class="form-label">Num. Personas</label>
+        <input type="number" class="form-control" id="num_personas" formControlName="num_personas">
+      </div>
+      <div class="col-md-6">
+        <label for="num_repeticiones" class="form-label">Repeticiones</label>
+        <input type="number" class="form-control" id="num_repeticiones" formControlName="num_repeticiones">
+      </div>
+
+      <div class="d-grid gap-2 mb-2">
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Generar</button>
+      </div>
+
+    </form>
+  </div>
+  <div class="col-12 col-md-8">
+    <app-actividad-cara-sello
+      [totalCara]="totalCara"
+      [totalSello]="totalSello"
+      [totalGeneral]="totalGeneral"
+    ></app-actividad-cara-sello>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-12 col-md-2 m-2" *ngFor="let row of resultados">
+    <app-persona
+      [persona]="(row.persona + 1)"
+      [cara]="row.cara"
+      [sello]="row.sello"
+      [total]="row.total"
+    ></app-persona>
+  </div>
+</div>
